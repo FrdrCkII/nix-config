@@ -1,7 +1,7 @@
 up:
     nix flake update
     git add flake.lock
-    git commit -m "update: flake"
+    git commit -m "update: flake.lock"
 
 # nixos
 
