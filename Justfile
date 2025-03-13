@@ -5,28 +5,28 @@ up:
 
 # nixos
 
-cp:
+ncp:
     rm -rf /etc/nixos/*
     cp -r ./* /etc/nixos
     rm -rf /etc/nixos/.git
 
-cl:
+ncl:
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system
     sudo nix-collect-garbage --delete-old
     nix-collect-garbage --delete-old
 
-bd host:
+nbd host:
     sudo nixos-rebuild switch --flake .#{{host}}
 
-tt host:
-    sudo nixos-rebuild test --flake .#{{host}}
-
-bdg host:
+nbdg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild switch --flake .#{{host}}
 
-ttg host:
+ntt host:
+    sudo nixos-rebuild test --flake .#{{host}}
+
+nttg host:
     git add *
     git commit -m "update"
     sudo nixos-rebuild test --flake .#{{host}}
@@ -44,13 +44,13 @@ ihm host:
 hbd host:
     home-manager switch --flake .#{{host}}
 
-htt host:
-    home-manager test --flake .#{{host}}
-
 hbdg host:
     git add *
     git commit -m "update"
     home-manager switch --flake .#{{host}}
+
+htt host:
+    home-manager test --flake .#{{host}}
 
 httg host:
     git add *
@@ -58,24 +58,22 @@ httg host:
     home-manager test --flake .#{{host}}
 
 # system manager
-# 必须使用root用户运行(不是root权限！)
-# sudo似乎会导致所有软件源(包括官方源)失效，导致所有软件包都必须从github拉取源码编译
 
 ism host:
-    nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
+    sudo nix run 'github:numtide/system-manager' -- switch --flake '.#{{host}}'
 
 sbd host:
-    system-manager switch --flake .#{{host}}
-
-stt host:
-    system-manager test --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
 
 sbdg host:
     git add *
     git commit -m "update"
-    system-manager switch --flake .#{{host}}
+    sudo system-manager switch --flake .#{{host}}
+
+stt host:
+    sudo system-manager test --flake .#{{host}}
 
 sttg host:
     git add *
     git commit -m "update"
-    system-manager test --flake .#{{host}}
+    sudo system-manager test --flake .#{{host}}
