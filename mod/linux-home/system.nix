@@ -1,4 +1,4 @@
-{ config, pkgs, lib, cfg, nixgl, ... }: 
+{ config, pkgs, lib, cfg, ... }: 
 lib.mkMerge [
   {
     programs.home-manager.enable = true;
