@@ -85,8 +85,8 @@
       enableCompletion = true;
       initExtra = ''
         # chsh -s ${pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
-        # exec zsh
-        zsh
+        exec zsh
+        # zsh
       '';
     };
   };
