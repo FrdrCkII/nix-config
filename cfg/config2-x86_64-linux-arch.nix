@@ -56,6 +56,7 @@ rec {
       "mod/linux-home-programs/zsh.nix"
     ];
     system-manager-modules = map custom-lib.relativeToRoot [
+      "mod/linux-system/locale.nix"
       "mod/linux-system/system.nix"
     ];
   };
