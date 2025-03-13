@@ -1,0 +1,15 @@
+{ config, pkgs, lib, cfg, nixgl, ... }: 
+{
+  config = lib.mkMerge [
+    {
+      nixpkgs.hostPlatform = cfg.sys.system;
+      environment.systemPackages = with pkgs; []
+      ++ cfg.opt.system-manager.packages;
+    }
+
+    ( lib.mkIf (cfg.sys.type == "linux") {
+        system-manager.allowAnyDistro = true;
+    } )
+    
+  ];
+}
