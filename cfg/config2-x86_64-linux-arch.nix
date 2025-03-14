@@ -74,12 +74,12 @@ rec {
       name = "FrdrCkII";
       mail = "c2h5oc2h4@outlook.com";
     };
-    drivers = [
-      "amd"
-    ];
-    desktop = [
+    drivers = {
+      amd = true;
+    };
+    desktop = {
       
-    ];
+    };
     boot = {
       grub.enable = true;
       efi-mount-point = "/efi";

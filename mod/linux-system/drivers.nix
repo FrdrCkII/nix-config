@@ -3,7 +3,7 @@
   config = lib.mkMerge [
     # https://wiki.nixos.org/wiki/AMD_GPU
     # https://wiki.archlinuxcn.org/wiki/AMDGPU
-    ( lib.optionals (builtins.elem "amd" cfg.opt.drivers) {
+    ( lib.mkIf (cfg.opt.drivers.amd) {
       environment.systemPackages = with pkgs; [
         lact
       ];
@@ -13,7 +13,7 @@
       };
     } )
 
-    ( lib.optionals (builtins.elem "nvidia" cfg.opt.drivers) {
+    ( lib.mkIf (cfg.opt.drivers.nvidia) {
     } )
 
   ];
