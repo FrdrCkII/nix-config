@@ -16,11 +16,11 @@
         systemd.services.system-manager-restart = {
           enable = true;
           description = "Restart system-manager after /nix is mounted";
-          after = "nix.mount";
-          requires = "nix.mount";
+          after = [ "nix.mount" ];
+          requires = [ "nix.mount" ];
           serviceConfig = {
-            Type = "oneshot";
             ExecStart = "/usr/bin/systemctl start system-manager.target";
+            Type = "oneshot";
           };
           wantedBy = [ "multi-user.target" ];
         };
