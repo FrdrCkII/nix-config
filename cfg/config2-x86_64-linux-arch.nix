@@ -48,6 +48,7 @@ rec {
 
   modules = {
     home-manager-modules = map custom-lib.relativeToRoot [
+      "mod/linux-home/drivers.nix"
       "mod/linux-home/locale.nix"
       "mod/linux-home/nixpkgs.nix"
       "mod/linux-home/system.nix"
@@ -87,14 +88,14 @@ rec {
 
     system-manager = {
       packages = with packages.pkgs; [
-        fastfetch
-        nix-tree
       ];
     };
 
     home-manager = {
       version = "25.05";
       packages = with packages.pkgs; [
+        fastfetch
+        nix-tree
         wechat-uos qq
         libreoffice
         ffmpeg gimp
