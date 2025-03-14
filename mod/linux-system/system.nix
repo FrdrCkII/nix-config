@@ -34,6 +34,13 @@
             After=multi-user.target rescue.service rescue.target
             AllowIsolate=yes
           '';
+          "systemd/system/default.target.wants/system-manager.target".text = ''
+            [Unit]
+            Description=System Manager Service
+            Requires=multi-user.target
+            After=multi-user.target rescue.service rescue.target
+            AllowIsolate=yes
+          '';
         };
     } )
     
