@@ -14,7 +14,7 @@
           After = [ "multi-user.target" ];
         };
         serviceConfig = {
-          ExecStart = "lact daemon";
+          ExecStart = "${pkgs.lact}/lact daemon";
           Nice = "-10";
           Restart = "on-failure";
         };
