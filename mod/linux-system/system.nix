@@ -15,10 +15,10 @@
         # 修复 https://github.com/numtide/system-manager/issues/170
         systemd.services.system-manager-restart = {
           enable = true;
+          description = "Restart system-manager after /nix is mounted";
+          after = "nix.mount";
+          requires = "nix.mount";
           serviceConfig = {
-            Description = "Restart system-manager after /nix is mounted";
-            Requires = "nix.mount";
-            After = "nix.mount";
             Type = "oneshot";
             ExecStart = "/usr/bin/systemctl start system-manager.target";
           };
