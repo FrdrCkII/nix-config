@@ -28,8 +28,6 @@
         systemd.targets.system-manager = {
           enable = true;
           description = "System Manager Service";
-          requires = ["multi-user.target"];
-          after = ["multi-user.target"];
           wantedBy = ["multi-user.target"];
         };
     } )
