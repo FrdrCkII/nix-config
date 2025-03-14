@@ -29,7 +29,7 @@
         # [Install]
         # WantedBy=multi-user.target
         environment.etc = {
-          "systemd/system/system-manager.target".text = ''
+          "systemd/system/multi-user.target.wants/system-manager.target".text = ''
             [Unit]
             Description=System Manager Service
             Requires=multi-user.target
