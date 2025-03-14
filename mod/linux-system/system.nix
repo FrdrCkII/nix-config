@@ -25,7 +25,7 @@
 
         # [Install]
         # WantedBy=multi-user.target
-        systemd.targets.system-manager.enable = false;
+        # systemd.targets.system-manager.enable = false;
         environment.etc = {
           "systemd/system/system-manager.target".text = ''
             [Unit]
