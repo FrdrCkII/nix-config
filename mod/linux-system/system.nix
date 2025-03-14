@@ -13,17 +13,20 @@
     ( lib.mkIf (cfg.sys.type == "linux") {
         system-manager.allowAnyDistro = true;
         # 修复 https://github.com/numtide/system-manager/issues/170
-        systemd.services.system-manager-restart = {
-          enable = true;
-          description = "Restart system-manager after /nix is mounted";
-          after = [ "nix.mount" ];
-          requires = [ "nix.mount" ];
-          serviceConfig = {
-            ExecStart = "/usr/bin/systemctl start system-manager.target";
-            Type = "oneshot";
-          };
-          wantedBy = [ "multi-user.target" ];
-        };
+        # 请自行创建如下的systemd单元文件
+        # [Unit]
+        # Description=Restart system-manager after /nix is mounted
+        # Requires=nix.mount
+        # After=nix.mount
+
+        # [Service]
+        # Type=oneshot
+        # ExecStart=/usr/bin/systemctl start system-manager.target
+        # # if with 4/permission problems
+        # #ExecStart=sh -c "/usr/bin/systemctl start system-manager.target"
+
+        # [Install]
+        # WantedBy=multi-user.target
     } )
     
   ];
