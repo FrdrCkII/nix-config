@@ -11,7 +11,7 @@
         enable = true;
         unitConfig = {
           Description = "AMDGPU Control Daemon";
-          After = [ "multi-user.target" ];
+          After = [ "multi-user.target" "system-manager-path.service" ];
         };
         serviceConfig = {
           ExecStart = "${pkgs.lact}/bin/lact daemon";
