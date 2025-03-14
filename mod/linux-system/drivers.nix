@@ -16,5 +16,5 @@
     ( lib.optionals (builtins.elem "nvidia" cfg.opt.drivers) {
     } )
 
-  ]
+  ];
 }
