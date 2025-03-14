@@ -36,8 +36,8 @@
       # 问题：同上
 
       # 方法三 弃用system-manager.target和system-manager-path.service
-      systemd.targets.system-manager.enable = false;
-      systemd.services.system-manager-path.enable = false;
+      systemd.targets.system-manager.enable = lib.mkForce false;
+      systemd.services.system-manager-path.enable = lib.mkForce false;
       systemd.services.system-manager-path-replace = {
         enable = true;
         description = "";
