@@ -35,7 +35,7 @@
             Requires=multi-user.target
             After=nix.mont
           '';
-        }
+        };
     } )
     
   ];
