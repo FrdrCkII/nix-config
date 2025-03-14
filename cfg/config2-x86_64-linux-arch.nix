@@ -48,7 +48,6 @@ rec {
 
   modules = {
     home-manager-modules = map custom-lib.relativeToRoot [
-      "mod/linux-home/drivers.nix"
       "mod/linux-home/locale.nix"
       "mod/linux-home/nixpkgs.nix"
       "mod/linux-home/system.nix"
@@ -59,7 +58,6 @@ rec {
       "mod/linux-home-programs/zsh.nix"
     ];
     system-manager-modules = map custom-lib.relativeToRoot [
-      "mod/linux-system/drivers.nix"
       "mod/linux-system/locale.nix"
       "mod/linux-system/system.nix"
     ];
