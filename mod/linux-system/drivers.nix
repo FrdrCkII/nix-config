@@ -7,9 +7,18 @@
       environment.systemPackages = with pkgs; [
         lact
       ];
-      systemd = {
-        packages = with pkgs; [ lact ];
-        services.lactd.wantedBy = ["multi-user.target"];
+      systemd.services.lactd = {
+        enable = true;
+        unitConfig = {
+          Description = "AMDGPU Control Daemon";
+          After = [ "multi-user.target" ];
+        };
+        serviceConfig = {
+          ExecStart = "lact daemon";
+          Nice = "-10";
+          Restart = "on-failure";
+        };
+        wantedBy = [ "multi-user.target" ];
       };
     } )
 
