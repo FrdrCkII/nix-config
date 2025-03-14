@@ -22,6 +22,7 @@
         # [Service]
         # Type=oneshot
         # ExecStart=/usr/bin/systemctl start system-manager.target
+        # ExecStart=/usr/bin/systemctl start system-manager-path.service
         # # if with 4/permission problems
         # #ExecStart=sh -c "/usr/bin/systemctl start system-manager.target"
 
