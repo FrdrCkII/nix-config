@@ -32,14 +32,14 @@
           enable = true;
           description = "System Manager Service";
           requires = ["multi-user.target"];
-          after = ["multi-user.target" "nix.mont"];
+          after = ["multi-user.target"];
         };
         environment.etc = {
           "systemd/system/multi-user.target.wants/system-manager.target".text = ''
             [Unit]
             Description=System Manager Service
             Requires=multi-user.target
-            After=nix.mont
+            After=multi-user.target
           '';
         };
     } )
