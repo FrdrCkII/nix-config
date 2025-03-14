@@ -46,6 +46,7 @@
         };
         script =
           let
+            pathDir = "/run/system-manager/sw";
             pathDrv = pkgs.buildEnv {
               name = "system-manager-path";
               paths = config.environment.systemPackages;
