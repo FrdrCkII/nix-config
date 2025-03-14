@@ -25,22 +25,12 @@
 
         # [Install]
         # WantedBy=multi-user.target
-        # systemd.targets.system-manager.enable = false;
-        environment.etc = {
-          "systemd/system/system-manager.target".text = ''
-            [Unit]
-            Description=System Manager Service
-            Requires=multi-user.target
-            After=multi-user.target rescue.service rescue.target
-            AllowIsolate=yes
-          '';
-          "systemd/system/default.target.wants/system-manager.target".text = ''
-            [Unit]
-            Description=System Manager Service
-            Requires=multi-user.target
-            After=multi-user.target rescue.service rescue.target
-            AllowIsolate=yes
-          '';
+        systemd.targets.system-manager = {
+          enable = true;
+          description = "System Manager Service";
+          requires = ["multi-user.target"];
+          after = ["multi-user.target"];
+          wantedBy = ["multi-user.target"];
         };
     } )
     
