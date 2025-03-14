@@ -35,9 +35,10 @@
       # };
       # 问题：同上
 
-      # 方法三 弃用system-manager.target，覆盖system-manager-path服务
+      # 方法三 弃用system-manager.target和system-manager-path.service
       systemd.targets.system-manager.enable = false;
-      systemd.services.system-manager-path = {
+      systemd.services.system-manager-path.enable = false;
+      systemd.services.system-manager-path-replace = {
         enable = true;
         description = "";
         wantedBy = [ "multi-user.target" ];
