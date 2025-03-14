@@ -31,7 +31,8 @@
             [Unit]
             Description=System Manager Service
             Requires=multi-user.target
-            WantedBy=multi-user.target
+            After=multi-user.target rescue.service rescue.target
+            AllowIsolate=yes
           '';
         };
     } )
