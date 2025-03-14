@@ -36,6 +36,7 @@
       # 问题：同上
 
       # 方法三 弃用system-manager.target，覆盖system-manager-path服务
+      systemd.targets.system-manager.enable = false;
       systemd.services.system-manager-path = {
         enable = true;
         description = "";
