@@ -22,7 +22,7 @@
             Type = "oneshot";
             ExecStart = "/usr/bin/systemctl start system-manager.target";
           };
-          WantedBy = [ "multi-user.target" ];
+          wantedBy = [ "multi-user.target" ];
         };
     } )
     
