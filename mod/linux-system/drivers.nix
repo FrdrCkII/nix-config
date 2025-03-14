@@ -18,7 +18,7 @@
           Nice = "-10";
           Restart = "on-failure";
         };
-        wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "system-manager.target" ];
       };
     } )
 
