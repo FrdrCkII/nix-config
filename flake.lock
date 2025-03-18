@@ -82,11 +82,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742246081,
-        "narHash": "sha256-1e4oFbtdOOb6NqauHevWWjEUXZnfZ6RUAJJjn9i4YBc=",
+        "lastModified": 1742305478,
+        "narHash": "sha256-iYCinzZnnUeCkZ031qGRwPdwRsqW6o9Y0MgGpA7Zva4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c657142e24a43ea1035889f0b0a7c24598e0e18a",
+        "rev": "fb74bb76d94a6c55632376c931fc108131260ee9",
         "type": "github"
       },
       "original": {
@@ -96,18 +96,18 @@
         "type": "github"
       }
     },
-    "myrepo-git": {
+    "myrepo-github": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1742307079,
-        "narHash": "sha256-3vqPGXwFPzv3E6y/NJZsFunRoB/18tpFyLd9P9ONL18=",
+        "lastModified": 1742310424,
+        "narHash": "sha256-9NcbdMYMJ3Nhv4Myj/U/Wv90sA7LpKizC/hvrSPbOag=",
         "owner": "FrdrCkII",
         "repo": "nur",
-        "rev": "7300307b6fbae07c8f3e8153876c9ca926014cd6",
+        "rev": "5ab73d2d22200e4033689af276934788f3c79941",
         "type": "github"
       },
       "original": {
@@ -204,11 +204,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1742136038,
-        "narHash": "sha256-DDe16FJk18sadknQKKG/9FbwEro7A57tg9vB5kxZ8kY=",
+        "lastModified": 1742268799,
+        "narHash": "sha256-IhnK4LhkBlf14/F8THvUy3xi/TxSQkp9hikfDZRD4Ic=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a1185f4064c18a5db37c5c84e5638c78b46e3341",
+        "rev": "da044451c6a70518db5b730fe277b70f494188f1",
         "type": "github"
       },
       "original": {
@@ -259,11 +259,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1742288739,
-        "narHash": "sha256-G0OuOGL8uv6gtgTIuQT8Uso+o+lCnMpVbisWvXIeblE=",
+        "lastModified": 1742309415,
+        "narHash": "sha256-A5gA9dDnV1GT5EoJKQMkB46KQS9NrkutQJsIeHQ+63U=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2258bcfb33b85e1ef1a0846e63ad1cbc08f8c984",
+        "rev": "c7f9d9676ca1679d6010c98c4df5a4ceac34487e",
         "type": "github"
       },
       "original": {
@@ -277,7 +277,7 @@
         "flake-utils": "flake-utils",
         "haumea": "haumea",
         "home-manager": "home-manager",
-        "myrepo-git": "myrepo-git",
+        "myrepo-github": "myrepo-github",
         "myrepo-local": "myrepo-local",
         "nixgl": "nixgl",
         "nixos-generators": "nixos-generators",
