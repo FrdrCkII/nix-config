@@ -70,7 +70,7 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
 
     # 我的NUR软件包
     myrepo = {
-      url = "github:FrdrCkII/nur";
+      url = "./nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
