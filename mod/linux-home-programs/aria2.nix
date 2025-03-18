@@ -1,4 +1,4 @@
-{ config, pkgs, lib, cfg, custom-lib, ... }:
+{ config, pkgs, lib, cfg, custom-lib, inputs, ... }:
 {
   home.packages = [
     inputs.myrepo.packages."${cfg.sys.system}".aria2-fast
