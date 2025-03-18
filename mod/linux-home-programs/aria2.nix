@@ -12,7 +12,7 @@
       Description = "Aria2 Daemon";
     };
     Service = {
-      ExecStart = "${pkgs.aria2-fast}/bin/aria2c --conf-path=/home/${cfg.opt.users.user.name}/.aria2/aria2.conf";
+      ExecStart = "${inputs.myrepo-local.packages."${cfg.sys.system}".aria2-fast}/bin/aria2c --conf-path=/home/${cfg.opt.users.user.name}/.aria2/aria2.conf";
     };
     Install = {
       WantedBy = [ "default.target" ];

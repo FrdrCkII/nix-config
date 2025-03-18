@@ -96,7 +96,27 @@
         "type": "github"
       }
     },
-    "myrepo": {
+    "myrepo-git": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742307079,
+        "narHash": "sha256-3vqPGXwFPzv3E6y/NJZsFunRoB/18tpFyLd9P9ONL18=",
+        "owner": "FrdrCkII",
+        "repo": "nur",
+        "rev": "7300307b6fbae07c8f3e8153876c9ca926014cd6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FrdrCkII",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
+    "myrepo-local": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -257,7 +277,8 @@
         "flake-utils": "flake-utils",
         "haumea": "haumea",
         "home-manager": "home-manager",
-        "myrepo": "myrepo",
+        "myrepo-git": "myrepo-git",
+        "myrepo-local": "myrepo-local",
         "nixgl": "nixgl",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs_2",
