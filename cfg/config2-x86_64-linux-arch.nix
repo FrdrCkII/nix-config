@@ -91,18 +91,16 @@ rec {
 
     home-manager = {
       version = "25.05";
-      packages = lib.mkMerge [
-        ( with packages.pkgs; [
-          fastfetch
-          nix-tree
-          wechat-uos qq
-          libreoffice
-          ffmpeg gimp
-          just
-        ] )
-        ( with inputs.myrepo.packages.${system.system}; [
-          aria2-fast
-        ] )
+      packages = [
+        packages.pkgs.fastfetch
+        packages.pkgs.nix-tree
+        packages.pkgs.wechat-uos
+        packages.pkgs.qq
+        packages.pkgs.libreoffice
+        packages.pkgs.ffmpeg
+        packages.pkgs.gimp
+        packages.pkgs.just
+        inputs.myrepo.packages.${system.system}.aria2-fast
       ];
     };
   };
