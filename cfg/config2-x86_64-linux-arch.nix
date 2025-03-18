@@ -103,7 +103,6 @@ rec {
         libreoffice
         ffmpeg gimp
         just
-        myrepo.aria2-fast
       ];
     };
   };
