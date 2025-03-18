@@ -69,8 +69,12 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
     nixgl.url = "github:nix-community/nixGL";
 
     # 我的NUR软件包
-    myrepo = {
+    myrepo-local = {
       url = "./nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    myrepo-git = {
+      url = "github:FrdrCkII/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

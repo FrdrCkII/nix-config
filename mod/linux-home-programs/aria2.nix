@@ -1,7 +1,7 @@
 { config, pkgs, lib, cfg, custom-lib, inputs, ... }:
 {
   home.packages = [
-    inputs.myrepo.packages."${cfg.sys.system}".aria2-fast
+    inputs.myrepo-local.packages."${cfg.sys.system}".aria2-fast
   ];
   home.file.".aria2" = {
     source = custom-lib.relativeToRoot "dot/${cfg.sys.config}/aria2";
@@ -12,7 +12,7 @@
       Description = "Aria2 Daemon";
     };
     Service = {
-      ExecStart = "/usr/bin/aria2c --conf-path=/home/${cfg.opt.users.user.name}/.aria2/aria2.conf";
+      ExecStart = "${pkgs.aria2-fast}/bin/aria2c --conf-path=/home/${cfg.opt.users.user.name}/.aria2/aria2.conf";
     };
     Install = {
       WantedBy = [ "default.target" ];
