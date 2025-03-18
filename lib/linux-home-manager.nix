@@ -4,11 +4,6 @@
   system = custom-config.system.system;
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
-    nixpkgs = {
-      inherit inputs lib custom-lib;
-      inherit (custom-config.packages.pkgs) system config overlays;
-      inherit (custom-config.packages) pkgs-stable pkgs-unstable nur myrepo;
-    };
     cfg = {
       sys = custom-config.system;
       pkg = custom-config.packages;

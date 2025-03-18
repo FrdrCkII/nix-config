@@ -24,12 +24,7 @@ rec {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [
-        inputs.nixgl.overlay
-        (final: prev: {
-          myrepo = inputs.myrepo.packages."${prev.system}";
-        })
-      ];
+      overlays = [ inputs.nixgl.overlay ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
       inherit (system) system;
@@ -44,12 +39,6 @@ rec {
       overlays = [ inputs.nixgl.overlay ];
     };
     nur = import inputs.nur {
-      inherit (system) system;
-      config.allowUnfreePredicate = allowed-unfree-packages;
-      config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixgl.overlay ];
-    };
-    myrepo = import inputs.myrepo {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;

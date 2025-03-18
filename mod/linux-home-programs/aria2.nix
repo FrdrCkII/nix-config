@@ -1,7 +1,7 @@
 { config, pkgs, lib, cfg, custom-lib, ... }:
 {
-  home.packages = with pkgs; [
-    myrepo.aria2-fast
+  home.packages = [
+    inputs.myrepo.packages."${cfg.sys.system}".aria2-fast
   ];
   home.file.".aria2" = {
     source = custom-lib.relativeToRoot "dot/${cfg.sys.config}/aria2";
