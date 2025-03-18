@@ -24,7 +24,12 @@ rec {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixgl.overlay ];
+      overlays = [
+        inputs.nixgl.overlay
+        (final: prev: {
+          myRepo = inputs.myRepo.packages."${prev.system}";
+        })
+      ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
       inherit (system) system;
@@ -91,16 +96,14 @@ rec {
 
     home-manager = {
       version = "25.05";
-      packages = [
-        packages.pkgs.fastfetch
-        packages.pkgs.nix-tree
-        packages.pkgs.wechat-uos
-        packages.pkgs.qq
-        packages.pkgs.libreoffice
-        packages.pkgs.ffmpeg
-        packages.pkgs.gimp
-        packages.pkgs.just
-        # inputs.myrepo.packages.${system.system}.aria2-fast
+      packages = with packages.pkgs; [
+        fastfetch
+        nix-tree
+        wechat-uos qq
+        libreoffice
+        ffmpeg gimp
+        just
+        myRepo.aria2-fast
       ];
     };
   };
