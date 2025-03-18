@@ -69,11 +69,13 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
     nixgl.url = "github:nix-community/nixGL";
 
     # 我的NUR软件包
+    # 本地仓库，文件就在nur目录下，用于测试
     myrepo-local = {
       url = "./nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    myrepo-git = {
+    # github仓库
+    myrepo-github = {
       url = "github:FrdrCkII/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
