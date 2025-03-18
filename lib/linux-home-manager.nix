@@ -4,6 +4,9 @@
   system = custom-config.system.system;
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
+    pkgs = {
+      inherit (custom-config.packages) pkgs;
+    };
     cfg = {
       sys = custom-config.system;
       pkg = custom-config.packages;
