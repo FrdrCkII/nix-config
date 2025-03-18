@@ -44,7 +44,7 @@ rec {
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
     };
-    myrepo = import inputs.myrepo {
+    myrepo = import inputs.myrepo.packages."${system.system}" {
       inherit (system) system;
       overlays = [ inputs.nixgl.overlay ];
     };
