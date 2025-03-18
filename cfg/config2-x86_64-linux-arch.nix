@@ -44,6 +44,10 @@ rec {
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
     };
+    myrepo = import inputs.myrepo {
+      inherit (system) system;
+      overlays = [ inputs.nixgl.overlay ];
+    };
   };
 
   modules = {
@@ -85,19 +89,22 @@ rec {
     };
 
     system-manager = {
-      packages = with packages.pkgs; [
+      packages = with packages; [
       ];
     };
 
     home-manager = {
       version = "25.05";
-      packages = with packages.pkgs; [
-        fastfetch
-        nix-tree
-        wechat-uos qq
-        libreoffice
-        ffmpeg gimp
-        just
+      packages = with packages; [
+        pkgs.fastfetch
+        pkgs.nix-tree
+        pkgs.wechat-uos
+        pkgs.qq
+        pkgs.libreoffice
+        pkgs.ffmpeg
+        pkgs.gimp
+        pkgs.just
+        myrepo.aria2-fast
       ];
     };
   };

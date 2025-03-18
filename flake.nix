@@ -67,6 +67,12 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
     # 其他软件包
     # https://github.com/nix-community/nixGL
     nixgl.url = "github:nix-community/nixGL";
+
+    # 我的NUR软件包
+    myrepo = {
+      url = "github:FrdrCkII/nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { self, ... }@inputs: let
     inherit (inputs.nixpkgs) lib;
