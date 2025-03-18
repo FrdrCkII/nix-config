@@ -27,7 +27,7 @@ rec {
       overlays = [
         inputs.nixgl.overlay
         (final: prev: {
-          myRepo = inputs.myRepo.packages."${prev.system}";
+          myrepo = inputs.myrepo.packages."${prev.system}";
         })
       ];
     };
@@ -103,7 +103,7 @@ rec {
         libreoffice
         ffmpeg gimp
         just
-        myRepo.aria2-fast
+        myrepo.aria2-fast
       ];
     };
   };
