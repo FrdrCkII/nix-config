@@ -100,7 +100,7 @@ rec {
         packages.pkgs.ffmpeg
         packages.pkgs.gimp
         packages.pkgs.just
-        inputs.myrepo.packages.${system.system}.aria2-fast
+        # inputs.myrepo.packages.${system.system}.aria2-fast
       ];
     };
   };
