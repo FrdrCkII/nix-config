@@ -12,7 +12,7 @@
   libssh2,
   cppunit,
   sphinx,
-  # Security,
+  Security,
   nixosTests,
 }:
 
