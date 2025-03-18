@@ -14,5 +14,14 @@
 in home-manager.lib.homeManagerConfiguration {
   inherit extraSpecialArgs;
   pkgs = extraSpecialArgs.cfg.pkg.pkgs-unstable;
-  modules = extraSpecialArgs.cfg.mod.home-manager-modules;
+  modules = extraSpecialArgs.cfg.mod.home-manager-modules
+  ++ [
+    ({
+      nixpkgs.overlays = [
+        (final: prev: {
+          myRepo = inputs.myRepo.packages."${system}";
+        })
+      ];
+    })
+  ];
 }
