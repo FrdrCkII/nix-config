@@ -7,7 +7,7 @@
     nixpkgs.pkgs = {
       inherit inputs lib custom-lib;
       inherit (custom-config.packages.pkgs) system config overlays;
-      inherit (custom-config.packages) pkgs-stable pkgs-unstable nur;
+      inherit (custom-config.packages) pkgs-stable pkgs-unstable nur myrepo;
     };
     cfg = {
       sys = custom-config.system;
