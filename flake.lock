@@ -82,11 +82,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1742305478,
-        "narHash": "sha256-iYCinzZnnUeCkZ031qGRwPdwRsqW6o9Y0MgGpA7Zva4=",
+        "lastModified": 1742326330,
+        "narHash": "sha256-Tumt3tcMXJniSh7tw2gW+WAnVLeB3WWm+E+yYFnLBXo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fb74bb76d94a6c55632376c931fc108131260ee9",
+        "rev": "22a36aa709de7dd42b562a433b9cefecf104a6ee",
         "type": "github"
       },
       "original": {
@@ -96,27 +96,7 @@
         "type": "github"
       }
     },
-    "myrepo-github": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1742310424,
-        "narHash": "sha256-9NcbdMYMJ3Nhv4Myj/U/Wv90sA7LpKizC/hvrSPbOag=",
-        "owner": "FrdrCkII",
-        "repo": "nur",
-        "rev": "5ab73d2d22200e4033689af276934788f3c79941",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FrdrCkII",
-        "repo": "nur",
-        "type": "github"
-      }
-    },
-    "myrepo-local": {
+    "local": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -131,6 +111,26 @@
         "type": "path"
       },
       "parent": []
+    },
+    "myrepo": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1742356667,
+        "narHash": "sha256-NkW3cFNrts9LbpLJIlOnAl7LCXdzqiywz/bjyISmC7U=",
+        "owner": "FrdrCkII",
+        "repo": "nur",
+        "rev": "074df41fff6c7e52fe4b5063c1b3add3f578aab2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "FrdrCkII",
+        "repo": "nur",
+        "type": "github"
+      }
     },
     "nixgl": {
       "inputs": {
@@ -220,11 +220,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1742069588,
-        "narHash": "sha256-C7jVfohcGzdZRF6DO+ybyG/sqpo1h6bZi9T56sxLy+k=",
+        "lastModified": 1742288794,
+        "narHash": "sha256-Txwa5uO+qpQXrNG4eumPSD+hHzzYi/CdaM80M9XRLCo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
+        "rev": "b6eaf97c6960d97350c584de1b6dcff03c9daf42",
         "type": "github"
       },
       "original": {
@@ -236,11 +236,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1742069588,
-        "narHash": "sha256-C7jVfohcGzdZRF6DO+ybyG/sqpo1h6bZi9T56sxLy+k=",
+        "lastModified": 1742288794,
+        "narHash": "sha256-Txwa5uO+qpQXrNG4eumPSD+hHzzYi/CdaM80M9XRLCo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c80f6a7e10b39afcc1894e02ef785b1ad0b0d7e5",
+        "rev": "b6eaf97c6960d97350c584de1b6dcff03c9daf42",
         "type": "github"
       },
       "original": {
@@ -259,11 +259,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1742309415,
-        "narHash": "sha256-A5gA9dDnV1GT5EoJKQMkB46KQS9NrkutQJsIeHQ+63U=",
+        "lastModified": 1742356336,
+        "narHash": "sha256-8E6vUUgtHjreazzNskGrH8W+LNbdYCtavKkjSS136HA=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "c7f9d9676ca1679d6010c98c4df5a4ceac34487e",
+        "rev": "dec087a23272d7e06f238db9b6b6d890b309d3d5",
         "type": "github"
       },
       "original": {
@@ -277,8 +277,8 @@
         "flake-utils": "flake-utils",
         "haumea": "haumea",
         "home-manager": "home-manager",
-        "myrepo-github": "myrepo-github",
-        "myrepo-local": "myrepo-local",
+        "local": "local",
+        "myrepo": "myrepo",
         "nixgl": "nixgl",
         "nixos-generators": "nixos-generators",
         "nixpkgs": "nixpkgs_2",
