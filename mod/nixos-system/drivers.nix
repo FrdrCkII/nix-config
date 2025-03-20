@@ -16,6 +16,7 @@ lib.mkMerge [
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;
+      package = pkgs.pipewire;
       audio.enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
