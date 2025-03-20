@@ -4,12 +4,12 @@
   programs = {
     fd = {
       enable = true;
-      package = cfg.pkg.pkgs.fd;
+      package = pkgs.fd;
       hidden = true;
     };
     bat = {
       enable = true;
-      package = cfg.pkg.pkgs.bat;
+      package = pkgs.bat;
       config = {
         pager = "less -FR";
         theme = "catppuccin-mocha";
@@ -17,7 +17,7 @@
     };
     fzf = {
       enable = true;
-      package = cfg.pkg.pkgs.fzf;
+      package = pkgs.fzf;
       enableZshIntegration = true;
       defaultCommand = "fd --type f";
       defaultOptions = [
@@ -44,14 +44,14 @@
     };
     zsh = {
       enable = true;
-      package = cfg.pkg.pkgs.zsh;
+      package = pkgs.zsh;
       enableCompletion = true;
       enableVteIntegration = true;
       dotDir = ".config/zsh";
       plugins = [
         {
           name = "zsh-zim";
-          src = cfg.pkg.pkgs.zimfw;
+          src = pkgs.zimfw;
         }
       ];
       initExtra = lib.mkMerge [
@@ -81,10 +81,10 @@
     };
     bash = {
       enable = true;
-      package = cfg.pkg.pkgs.bash;
+      package = pkgs.bash;
       enableCompletion = true;
       initExtra = ''
-        # chsh -s ${cfg.pkg.pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
+        # chsh -s ${pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
         exec zsh
         # zsh
       '';

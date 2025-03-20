@@ -1,7 +1,7 @@
 { config, lib, pkgs, cfg, ... }:
 lib.mkMerge [
   {
-    environment.systemPackages = with cfg.pkg.pkgs; [
+    environment.systemPackages = with pkgs; [
       pavucontrol
     ];
     # 驱动
@@ -30,15 +30,15 @@ lib.mkMerge [
   # https://wiki.nixos.org/wiki/AMD_GPU
   # https://wiki.archlinuxcn.org/wiki/AMDGPU
   ( lib.mkIf (cfg.opt.drivers.amd) {
-    environment.systemPackages = with cfg.pkg.pkgs; [
+    environment.systemPackages = with pkgs; [
       lact
     ];
     hardware.graphics = {
-      extraPackages = with cfg.pkg.pkgs; [
+      extraPackages = with pkgs; [
         mesa
         amdvlk
       ];
-      extraPackages32 = with cfg.pkg.pkgs; [
+      extraPackages32 = with pkgs; [
         driversi686Linux.mesa
         driversi686Linux.amdvlk
       ];
@@ -47,7 +47,7 @@ lib.mkMerge [
     boot.initrd.kernelModules = [ "amdgpu" ];
     services.xserver.videoDrivers = [ "amdgpu" ];
     systemd = {
-      packages = with cfg.pkg.pkgs; [ lact ];
+      packages = with pkgs; [ lact ];
       services.lactd.wantedBy = ["multi-user.target"];
     };
   } )

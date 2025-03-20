@@ -2,7 +2,7 @@
 {
   programs.yazi = {
     enable = true;
-    package = cfg.pkg.pkgs.yazi;
+    package = pkgs.yazi;
     enableBashIntegration = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;

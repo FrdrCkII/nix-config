@@ -1,13 +1,13 @@
 { config, lib, pkgs, cfg, ... }:
 lib.mkMerge [
   {
-    environment.systemPackages = with cfg.pkg.pkgs; [
+    environment.systemPackages = with pkgs; [
       vim wget curl git
     ]
     ++ cfg.opt.system.packages;
     networking.hostName = cfg.hostname;
     networking.networkmanager.enable = true;
-    nixcfg.pkg.pkgs.config = {
+    nixpkgs.config = {
       allowUnfreePredicate = cfg.pkg.allowed-unfree-packages;
       permittedInsecurePackages = cfg.pkg.allowed-insecure-packages;
     };
@@ -16,7 +16,7 @@ lib.mkMerge [
       extraGroups = [ "wheel" "networkmanager" ];
     };
     system.stateVersion = if (cfg.opt.system.version != null) then cfg.opt.system.version else "25.05";
-    boot.kernelPackages = if (cfg.opt.system.channel != null) then cfg.opt.system.kernel else cfg.pkg.pkgs.linuxPackages;
+    boot.kernelPackages = if (cfg.opt.system.channel != null) then cfg.opt.system.kernel else pkgs.linuxPackages;
   }
 
   ( lib.mkIf (cfg.opt.system.channel != null) {
