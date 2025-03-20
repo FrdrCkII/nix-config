@@ -20,13 +20,13 @@ rec {
     ];
     allowed-insecure-packages = [
     ];
-    pkgs-stable = import inputs.nixpkgs-stable {
+    pkgs = import inputs.nixpkgs-unstable {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
     };
-    pkgs-unstable = import inputs.nixpkgs-unstable {
+    pkgs-stable = import inputs.nixpkgs-stable {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
