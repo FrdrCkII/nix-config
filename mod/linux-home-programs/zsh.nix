@@ -62,7 +62,7 @@
           ZIM_HOME=~/.config/zsh
           # Install missing modules and update ''${ZIM_HOME}/init.zsh if missing or outdated.
           if [[ ! ''${ZIM_HOME}/init.zsh -nt ''${ZIM_CONFIG_FILE:-''${ZDOTDIR:-''${HOME}}/.zimrc} ]]; then
-            source ${cfg.pkg.pkgs.zimfw}/zimfw.zsh init
+            source /home/${cfg.opt.users.user.name}/.config/zsh/plugins/zsh-zim/zimfw.zsh init
           fi
           # Initialize modules.
           source ''${ZIM_HOME}/init.zsh
