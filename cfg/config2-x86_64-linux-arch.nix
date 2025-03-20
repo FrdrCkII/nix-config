@@ -39,7 +39,7 @@ rec {
       overlays = [ inputs.nixgl.overlay ];
     };
     myrepo = import inputs.myrepo {
-      inherit (system) system;
+      system = "${system.system}";
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
