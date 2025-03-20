@@ -38,8 +38,7 @@ rec {
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
     };
-    myrepo = import inputs.myrepo {
-      system = "${system.system}";
+    myrepo = import inputs.myrepo."${system.system}" {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
