@@ -1,7 +1,7 @@
 { config, lib, pkgs, cfg, ... }:
 {
   nixpkgs = {
-    pkgs = cfg.pks.pkgs;
+    pkgs = cfg.pkg.pkgs
   };
   nix = {
     package = pkgs.nix;
