@@ -1,8 +1,5 @@
 { config, lib, pkgs, cfg, ... }:
 {
-  # home.packages = with cfg.pkg.pkgs; [
-  #   zimfw
-  # ];
   home.file.".config/zsh/.zimrc".source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
   programs = {
     fd = {
