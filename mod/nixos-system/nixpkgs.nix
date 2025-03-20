@@ -1,6 +1,7 @@
 { config, lib, pkgs, cfg, ... }:
 {
   nix = {
+    package = cfg.pkg.pkgs.nix;
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;

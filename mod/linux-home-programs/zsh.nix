@@ -1,31 +1,26 @@
 { config, lib, pkgs, cfg, ... }:
 {
-  home.packages = with cfg.pkg.pkgs; [
-    zsh zimfw
-    fzf fd bat
-  ];
+  # home.packages = with cfg.pkg.pkgs; [
+  #   zimfw
+  # ];
   home.file.".config/zsh/.zimrc".source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
   programs = {
     fd = {
       enable = true;
+      package = cfg.pkg.pkgs.fd;
       hidden = true;
     };
     bat = {
       enable = true;
+      package = cfg.pkg.pkgs.bat;
       config = {
         pager = "less -FR";
         theme = "catppuccin-mocha";
       };
-      # themes = {
-      #   # https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
-      #   catppuccin-mocha = {
-      #     src =  	cfg.pkg.nur.repos.ryan4yin.catppuccin-alacritty;
-      #     file = "Catppuccin-mocha.tmTheme";
-      #   };
-      # };
     };
     fzf = {
       enable = true;
+      package = cfg.pkg.pkgs.fzf;
       enableZshIntegration = true;
       defaultCommand = "fd --type f";
       defaultOptions = [
@@ -52,9 +47,16 @@
     };
     zsh = {
       enable = true;
+      package = cfg.pkg.pkgs.zsh;
       enableCompletion = true;
       enableVteIntegration = true;
       dotDir = ".config/zsh";
+      plugins = [
+        {
+          name = "zsh-zim";
+          src = cfg.pkg.pkgs.zimfw;
+        }
+      ];
       initExtra = lib.mkMerge [
         (''
           ZIM_HOME=~/.config/zsh
@@ -82,6 +84,7 @@
     };
     bash = {
       enable = true;
+      package = cfg.pkg.pkgs.bash;
       enableCompletion = true;
       initExtra = ''
         # chsh -s ${cfg.pkg.pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}

@@ -15,53 +15,21 @@ lib.mkMerge [
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
     };
+    system.stateVersion = if (cfg.opt.system.version != null) then cfg.opt.system.version else "25.05";
+    boot.kernelPackages = if (cfg.opt.system.channel != null) then cfg.opt.system.kernel else cfg.pkgs.linux;
   }
 
-  {
-    options.cfg.opt = {
-      system.version = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = "25.05";
-        description = "system state version";
-      };
-      system.channel = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = null;
-        description = "system channel";
-      };
-      system.kernel = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = cfg.pkg.pkgs.linuxPackages;
-        description = "kernel packages";
-      };
-      users.root.passwd = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = null;
-        description = "root hashed password";
-      };
-      users.user.passwd = lib.mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = null;
-        description = "user hashed password";
-      };
-    };
-    config = lib.mkMerge [
-      ( lib.mkIf (cfg.opt.system.version != null) {
-        system.stateVersion = cfg.opt.system.version;
-      } )
-      ( lib.mkIf (cfg.opt.system.channel != null) {
-        system.autoUpgrade.channel = cfg.opt.system.channel;
-      } )
-      ( lib.mkIf (cfg.opt.system.kernel != null) {
-        boot.kernelPackages = cfg.opt.system.kernel;
-      } )
-      ( lib.mkIf (cfg.opt.users.root.passwd != null) {
-        users.users.root.hashedPassword = cfg.opt.users.root.passwd;
-      } )
-      ( lib.mkIf (cfg.opt.users.user.passwd != null) {
-        users.users.${cfg.opt.users.user.name}.hashedPassword = cfg.opt.users.user.passwd;
-      } )
-    ];
-  }
-
+  ( lib.mkIf (cfg.opt.system.version != null) {
+  } )
+  ( lib.mkIf (cfg.opt.system.channel != null) {
+    system.autoUpgrade.channel = cfg.opt.system.channel;
+  } )
+  ( lib.mkIf (cfg.opt.system.kernel != null) {
+  } )
+  ( lib.mkIf (cfg.opt.users.root.passwd != null) {
+    users.users.root.hashedPassword = cfg.opt.users.root.passwd;
+  } )
+  ( lib.mkIf (cfg.opt.users.user.passwd != null) {
+    users.users.${cfg.opt.users.user.name}.hashedPassword = cfg.opt.users.user.passwd;
+  } )
 ]
