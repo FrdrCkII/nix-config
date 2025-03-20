@@ -5,6 +5,7 @@
   pkgs = custom-config.packages.pkgs;
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
+    pkgs = custom-config.packages.pkgs;
     cfg = {
       sys = custom-config.system;
       pkg = custom-config.packages;
