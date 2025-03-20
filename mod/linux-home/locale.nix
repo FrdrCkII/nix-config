@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, cfg, ... }:
 {
   home.packages = with cfg.pkg.pkgs; [
     # 图标字体

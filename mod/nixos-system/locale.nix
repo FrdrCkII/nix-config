@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, cfg, ... }:
 {
   # 建议参考 https://wiki.archlinuxcn.org/wiki/简体中文本地化
   time.timeZone = "Asia/Shanghai";

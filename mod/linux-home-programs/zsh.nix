@@ -1,10 +1,10 @@
-{ config, pkgs, lib, cfg, custom-lib, ... }:
+{ config, lib, pkgs, cfg, ... }:
 {
   home.packages = with cfg.pkg.pkgs; [
     zsh zimfw
     fzf fd bat
   ];
-  home.file.".config/zsh/.zimrc".source = custom-lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
+  home.file.".config/zsh/.zimrc".source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
   programs = {
     fd = {
       enable = true;

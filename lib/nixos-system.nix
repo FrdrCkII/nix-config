@@ -9,6 +9,7 @@
       pkg = custom-config.packages;
       mod = custom-config.modules;
       opt = custom-config.options;
+      lib = custom-args.custom-lib;
     };
   };
 in nixpkgs.lib.nixosSystem {
