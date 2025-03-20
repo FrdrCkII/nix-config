@@ -2,6 +2,7 @@
   inherit (custom-args) inputs lib custom-lib;
   inherit (custom-args.inputs) home-manager;
   system = custom-config.system.system;
+  pkgs = custom-config.packages.pkgs;
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
     cfg = {

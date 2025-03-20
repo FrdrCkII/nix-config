@@ -2,6 +2,7 @@
   inherit (custom-args) inputs lib custom-lib;
   inherit (custom-args.inputs) nixpkgs home-manager nixos-generators;
   system = custom-config.system.system;
+  pkgs = custom-config.packages.pkgs;
   specialArgs = {
     inherit (custom-args) inputs custom-lib;
     cfg = {
