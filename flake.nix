@@ -70,10 +70,10 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
 
     # 我的NUR软件包
     # 本地仓库，文件就在nur目录下，用于测试
-    # local = {
-    #   url = "./nur";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    local = {
+      url = "./nur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # github仓库
     myrepo = {
       url = "github:FrdrCkII/nur";
