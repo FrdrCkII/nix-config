@@ -1,7 +1,7 @@
 { config, lib, pkgs, cfg, ... }:
 {
   nix = {
-    package = pkgs.nix;
+    package = cfg.pkg.pkgs.nix;
     settings = {
       experimental-features = [
         "flakes"

@@ -1,13 +1,13 @@
 { config, lib, pkgs, cfg, ... }:
 lib.mkMerge [
   {
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with cfg.pkg.pkgs; [
       vim wget curl git
     ]
     ++ cfg.opt.system.packages;
     networking.hostName = cfg.hostname;
     networking.networkmanager.enable = true;
-    nixpkgs.config = {
+    nixcfg.pkg.pkgs.config = {
       allowUnfreePredicate = cfg.pkg.allowed-unfree-packages;
       permittedInsecurePackages = cfg.pkg.allowed-insecure-packages;
     };
@@ -31,7 +31,7 @@ lib.mkMerge [
       };
       system.kernel = lib.mkOption {
         type = lib.types.nullOr lib.types.str;
-        default = pkgs.linuxPackages;
+        default = cfg.pkg.pkgs.linuxPackages;
         description = "kernel packages";
       };
       users.root.passwd = lib.mkOption {

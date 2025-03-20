@@ -1,6 +1,6 @@
 { config, pkgs, lib, cfg, custom-lib, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = with cfg.pkg.pkgs; [
     zsh zimfw
     fzf fd bat
   ];
@@ -60,7 +60,7 @@
           ZIM_HOME=~/.config/zsh
           # Install missing modules and update ''${ZIM_HOME}/init.zsh if missing or outdated.
           if [[ ! ''${ZIM_HOME}/init.zsh -nt ''${ZIM_CONFIG_FILE:-''${ZDOTDIR:-''${HOME}}/.zimrc} ]]; then
-            source ${pkgs.zimfw}/zimfw.zsh init
+            source ${cfg.pkg.pkgs.zimfw}/zimfw.zsh init
           fi
           # Initialize modules.
           source ''${ZIM_HOME}/init.zsh
@@ -84,7 +84,7 @@
       enable = true;
       enableCompletion = true;
       initExtra = ''
-        # chsh -s ${pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
+        # chsh -s ${cfg.pkg.pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
         exec zsh
         # zsh
       '';

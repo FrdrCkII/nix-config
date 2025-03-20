@@ -6,7 +6,7 @@ lib.mkMerge [
       username = cfg.opt.users.user.name;
       homeDirectory = "/home/${cfg.opt.users.user.name}";
       stateVersion = cfg.opt.home-manager.version;
-      packages = with pkgs; []
+      packages = with cfg.pkg.pkgs; []
       ++ cfg.opt.home-manager.packages;
     };
   }

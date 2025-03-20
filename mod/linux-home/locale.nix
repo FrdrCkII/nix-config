@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = with cfg.pkg.pkgs; [
     # 图标字体
     material-design-icons
     font-awesome
@@ -22,7 +22,7 @@
     # source-han-mono # 等宽字体，大多数时候用不上
 
     # nerdfonts
-    # https://github.com/NixOS/nixpkgs/blob/nixos-unstable-small/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
+    # https://github.com/NixOS/nixcfg.pkg.pkgs/blob/nixos-unstable-small/cfg.pkg.pkgs/data/fonts/nerd-fonts/manifests/fonts.json
     nerd-fonts.symbols-only
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono

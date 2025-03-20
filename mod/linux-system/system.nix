@@ -2,9 +2,9 @@
 {
   config = lib.mkMerge [
     {
-      nixpkgs.hostPlatform = cfg.sys.system;
+      nixcfg.pkg.pkgs.hostPlatform = cfg.sys.system;
       environment = {
-        systemPackages = with pkgs; []
+        systemPackages = with cfg.pkg.pkgs; []
         ++ cfg.opt.system-manager.packages;
         etc."hostname".text = "${cfg.sys.host}\n";
       };

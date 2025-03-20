@@ -1,6 +1,6 @@
 { config, pkgs, lib, cfg, custom-lib, ... }:
 {
-  home.packages = with pkgs; [
+  home.packages = with cfg.pkg.pkgs; [
     go-musicfox
   ];
   xdg.configFile."go-musicfox" = {
