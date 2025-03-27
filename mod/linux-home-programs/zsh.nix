@@ -83,6 +83,7 @@
       enable = true;
       package = pkgs.bash;
       enableCompletion = true;
+      enableVteIntegration = true;
       initExtra = ''
         # chsh -s ${pkgs.zsh}/bin/zsh ${cfg.opt.users.user.name}
         exec zsh
