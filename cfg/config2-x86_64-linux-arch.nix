@@ -97,6 +97,7 @@ rec {
         libreoffice
         ffmpeg gimp
         just
+        tree
       ];
     };
   };
