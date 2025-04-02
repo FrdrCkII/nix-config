@@ -82,6 +82,11 @@
           export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
         '')
       ];
+      profileExtra = lib.mkMerge [
+        (''
+          /home/${cfg.opt.users.user.name}/.cargo/bin
+        '')
+      ]
     };
     bash = {
       enable = true;
