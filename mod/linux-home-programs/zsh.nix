@@ -80,11 +80,7 @@
         (''
           export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
           export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-        '')
-      ];
-      profileExtra = lib.mkMerge [
-        (''
-          PATH="$PATH:/home/${cfg.opt.users.user.name}/.cargo/bin"
+          export PATH=$PATH:/home/${cfg.opt.users.user.name}/.cargo/bin
         '')
       ];
     };
