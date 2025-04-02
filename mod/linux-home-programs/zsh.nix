@@ -86,7 +86,7 @@
         (''
           /home/${cfg.opt.users.user.name}/.cargo/bin
         '')
-      ]
+      ];
     };
     bash = {
       enable = true;
