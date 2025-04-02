@@ -84,7 +84,7 @@
       ];
       profileExtra = lib.mkMerge [
         (''
-          /home/${cfg.opt.users.user.name}/.cargo/bin
+          PATH="$PATH:/home/${cfg.opt.users.user.name}/.cargo/bin"
         '')
       ];
     };
