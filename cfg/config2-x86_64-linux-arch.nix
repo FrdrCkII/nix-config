@@ -95,7 +95,7 @@ rec {
         nix-tree
         wechat-uos qq
         libreoffice
-        ffmpeg gimp
+        ffmpeg #gimp
         just
         tree
       ];
