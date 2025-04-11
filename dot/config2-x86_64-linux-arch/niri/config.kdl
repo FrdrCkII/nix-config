@@ -66,7 +66,7 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "eDP-1" {
+output "HDMI-A-2" {
     // Uncomment this line to disable this output.
     // off
 
@@ -76,13 +76,22 @@ output "eDP-1" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080@120.030"
+    // 分辨率和输出的刷新率（可选）。
+    // 格式为“<width>x<height>”或“<width>x<height>@<刷新率>”。
+    // 如果省略刷新率，niri 将选择最高的刷新率
+    // 以获取分辨率。
+    // 如果模式完全省略或无效，niri 将自动选择一个模式。
+    // 在 niri 实例中运行 'niri msg outputs' 以列出所有输出及其模式。
+    mode "1920x1080"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 2
+    // 您可以使用整数或分数刻度，例如，使用 1.5 表示 150% 刻度。
+    scale 1
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    // Transform 允许逆时针旋转输出，有效值为：
+    // 正常、90、180、270、翻转、翻转、翻转 90、翻转 180 和翻转 270。
     transform "normal"
 
     // Position of the output in the global coordinate space.
@@ -94,6 +103,15 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
+    // 输出在全局坐标空间中的位置。
+    // 这会影响方向监视器作（如 “focus-monitor-left”）和光标移动。
+    // 光标只能在直接相邻的输出之间移动。
+    // 定位时必须考虑输出缩放和旋转：
+    // 输出的大小为逻辑像素或缩放像素。
+    // 例如，比例为 2.0 的 3840×2160 输出的逻辑大小为 1920×1080。
+    // 因此，要将另一个 Output （输出） 放在右侧，将其 x 设置为 1920。
+    // 如果位置未设置或导致重叠，则改为放置输出
+    // 自然而然。
     position x=1280 y=0
 }
 
@@ -259,7 +277,7 @@ layout {
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/_ima/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -333,7 +351,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T { spawn "alacritty"; }
+    Mod+T { spawn "ghostty"; }
     Mod+D { spawn "fuzzel"; }
     Super+Alt+L { spawn "swaylock"; }
 
@@ -559,7 +577,7 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
-    Mod+Shift+E { quit; }
+    Mod+Shift+Q { quit; }
     Ctrl+Alt+Delete { quit; }
 
     // Powers off the monitors. To turn them back on, do any input like
