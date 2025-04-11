@@ -593,7 +593,8 @@ spawn-at-startup "swww" "img" ""
 
 environment {
     DISPLAY ":12"
-    GTK_THEME "Breeze-Dark"
+    GTK_THEME "Breeze"
+    GTK2_RC_FILES "/usr/share/themes/Breeze-Dark/gtk-2.0/gtkrc"
     QT_STYLE_OVERRIDE "Breeze-Dark"
     QT_QPA_PLATFORMTHEME "qt5ct"
 }
