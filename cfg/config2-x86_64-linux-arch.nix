@@ -50,6 +50,7 @@ rec {
       "mod/linux-home/locale.nix"
       "mod/linux-home/nixpkgs.nix"
       "mod/linux-home/system.nix"
+      "mod/linux-home/xdg.nix"
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/aria2.nix"
