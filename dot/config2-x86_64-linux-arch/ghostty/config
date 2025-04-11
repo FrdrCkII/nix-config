@@ -1,4 +1,4 @@
-background =rgba(18, 58, 188, 0.6)
+background = #123abc
 
 window-decoration = none
 maximize = true
