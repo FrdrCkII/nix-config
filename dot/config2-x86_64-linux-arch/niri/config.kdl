@@ -586,6 +586,7 @@ binds {
 }
 
 spawn-at-startup "bash" "-c" "xwayland-satellite :12"
+spawn-at-startup "bash" "-c" "gnome-keyring-daemon --start"
 spawn-at-startup "waybar"
 
 environment {
