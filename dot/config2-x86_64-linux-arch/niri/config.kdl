@@ -585,7 +585,7 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
-spawn-at-startup "xwayland-satellite :12"
+spawn-at-startup "bash" "-c" "xwayland-satellite :12"
 spawn-at-startup "waybar"
 
 environment {
