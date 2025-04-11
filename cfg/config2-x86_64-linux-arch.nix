@@ -51,6 +51,7 @@ rec {
       "mod/linux-home/nixpkgs.nix"
       "mod/linux-home/system.nix"
 
+      "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/aria2.nix"
       "mod/linux-home-programs/musicfox.nix"
       "mod/linux-home-programs/yazi.nix"
