@@ -9,13 +9,13 @@
     "niri/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{name}: {icon}",
+        "format": " {icon} ",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
             "urgent": "",
             "focused": "",
             "default": ""
