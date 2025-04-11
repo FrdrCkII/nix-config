@@ -55,6 +55,8 @@ rec {
       "mod/linux-home-programs/musicfox.nix"
       "mod/linux-home-programs/yazi.nix"
       "mod/linux-home-programs/zsh.nix"
+
+      "mod/linux-home-desktop/niri.nix"
     ];
     system-manager-modules = map custom-lib.relativeToRoot [
       "mod/linux-system/locale.nix"
