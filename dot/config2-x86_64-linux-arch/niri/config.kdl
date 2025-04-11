@@ -586,7 +586,7 @@ binds {
 }
 
 spawn-at-startup "xwayland-satellite :12"
-spawn-at-startup "i3blocks"
+spawn-at-startup "waybar"
 
 environment {
     DISPLAY ":12"
