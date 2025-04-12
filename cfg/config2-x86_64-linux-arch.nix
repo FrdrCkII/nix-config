@@ -53,7 +53,7 @@ rec {
       "mod/linux-home/system.nix"
       "mod/linux-home/xdg.nix"
 
-      "mod/linux-home-programs/nixgl.nix"
+      "mod/linux-home-programs/nixGL.nix"
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/helix.nix"
