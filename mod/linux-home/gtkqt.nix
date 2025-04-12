@@ -9,6 +9,9 @@
     gtk3.extraConfig = {
       gtk-im-module = "fcitx";
     };
+    gtk4.extraConfig = {
+
+    };
   };
   qt = {
     enable = true;

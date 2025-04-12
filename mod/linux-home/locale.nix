@@ -7,6 +7,7 @@
       addons = with pkgs; [
         fcitx5-rime
         fcitx5-mozc
+        rime-zhwiki
       ];
     };
   };
