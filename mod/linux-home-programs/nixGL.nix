@@ -2,6 +2,6 @@
 {
   nixGL = {
     enable = true;
-    packages = inputs.nixGL.package;
+    packages = cfg.pkg.nixGL.package;
   };
 }

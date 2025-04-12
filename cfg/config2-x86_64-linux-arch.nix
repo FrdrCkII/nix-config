@@ -43,6 +43,7 @@ rec {
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [ inputs.nixgl.overlay ];
     };
+    nixGL = import inputs.nixGL;
   };
 
   modules = {
