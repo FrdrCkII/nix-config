@@ -1,3 +1,0 @@
-inherits = "snazzy"
-
-"ui.background.bg" = { modifiers = ["hidden"] }

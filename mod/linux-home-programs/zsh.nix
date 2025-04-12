@@ -1,6 +1,6 @@
 { config, lib, pkgs, cfg, ... }:
 {
-  home.file.".config/zsh/.zimrc".source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
+  xdg.configFile."zsh/.zimrc".source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/zsh/zimrc";
   programs = {
     fd = {
       enable = true;
