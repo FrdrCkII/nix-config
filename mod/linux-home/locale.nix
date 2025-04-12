@@ -1,5 +1,15 @@
 { config, lib, pkgs, cfg, ... }:
 {
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        fcitx5-rime
+        fcitx5-mozc
+      ];
+    };
+  };
   home.packages = with pkgs; [
     # 图标字体
     material-design-icons
