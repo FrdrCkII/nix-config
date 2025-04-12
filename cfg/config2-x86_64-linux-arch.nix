@@ -53,6 +53,7 @@ rec {
       "mod/linux-home/xdg.nix"
 
       "mod/linux-home-programs/ghostty.nix"
+      "mod/linux-home-programs/helix.nix"
       "mod/linux-home-programs/aria2.nix"
       "mod/linux-home-programs/musicfox.nix"
       "mod/linux-home-programs/yazi.nix"
