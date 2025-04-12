@@ -47,6 +47,7 @@ rec {
 
   modules = {
     home-manager-modules = map custom-lib.relativeToRoot [
+      "mod/linux-home/gtkqt.nix"
       "mod/linux-home/locale.nix"
       "mod/linux-home/nixpkgs.nix"
       "mod/linux-home/system.nix"
