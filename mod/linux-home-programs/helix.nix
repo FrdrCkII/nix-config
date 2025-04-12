@@ -3,14 +3,9 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = snazzy;
+      theme = "snazzy";
       editor = {
-        rulers = [72,80];
-        cursor-shape = {
-          normal = "block";
-          insert = "bar";
-          select = "underline";
-        };
+        rulers = ["72" "80"];
       };
     };
     languages.language = [{
