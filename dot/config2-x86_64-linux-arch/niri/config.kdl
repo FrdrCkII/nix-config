@@ -588,11 +588,10 @@ binds {
 spawn-at-startup "xwayland-satellite" ":12"
 spawn-at-startup "gnome-keyring-daemon" "--start"
 spawn-at-startup "waybar"
-spawn-at-startup "fcitx5"
+spawn-at-startup "fcitx5" "-d"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swww" "img" "/home/FrdrCkII/_ima/YaeWallpaper.gif"
 
 environment {
     DISPLAY ":12"
-    QT_QPA_PLATFORMTHEME "qt5ct"
 }
