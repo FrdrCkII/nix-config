@@ -6,6 +6,11 @@
       theme = "snazzy";
       editor = {
         rulers = [72 80];
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
       };
     };
     languages.language = [{
