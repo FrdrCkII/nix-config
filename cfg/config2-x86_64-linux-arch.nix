@@ -96,7 +96,6 @@ rec {
     home-manager = {
       version = "25.05";
       packages = with packages.pkgs; [
-        llvm
         rustup
         fastfetch
         nix-tree
