@@ -5,7 +5,7 @@
     settings = {
       theme = "snazzy";
       editor = {
-        rulers = ["72" "80"];
+        rulers = [72 80];
       };
     };
     languages.language = [{
