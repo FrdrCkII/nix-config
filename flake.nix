@@ -66,7 +66,11 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
 
     # 其他软件包
     # https://github.com/nix-community/nixGL
-    nixgl.url = "github:nix-community/nixGL";
+    nixGL = {
+      url = "github:guibou/nixGL";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # 我的NUR软件包
     # 本地仓库，文件就在nur目录下，用于测试
