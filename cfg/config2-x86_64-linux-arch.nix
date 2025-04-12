@@ -24,22 +24,25 @@ rec {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixGL.overlays.default ];
+      overlays = [
+        inputs.nixGL.overlays.default
+        ( final: prev: {
+          myrepo = inputs.myrepo.packages."${prev.system}";
+        } )
+      ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixGL.overlays.default ];
+      overlays = [ inputs.nixgl.overlay ];
     };
     nur = import inputs.nur {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixGL.overlays.default ];
+      overlays = [ inputs.nixgl.overlay ];
     };
-    myrepo = import inputs.myrepo.packages."${system.system}";
-    nixgl = import inputs.nixgl.packages."${system.system}";
   };
 
   modules = {
