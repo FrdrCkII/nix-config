@@ -9,7 +9,11 @@
   };
   qt = {
     enable = true;
+    platformTheme.name = "kde6";
     style.name = "Breeze";
-    style.package = pkgs.kdePackages.breeze;
+    style.package = with pkgs; [
+      kdePackages.breeze
+      kdePackages.breeze-icons
+    ];
   };
 }
