@@ -99,8 +99,8 @@
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 
 [palette]
-background          = "#282a3600"
-background_dark     = "#21222c00"
+background          = "rgba(40, 42, 54, 0.2)"
+background_dark     = "rgba(33, 34, 44, 0.2)"
 comment             = "#a39e9b"
 foreground          = "#eff0eb"
 primary_highlight   = "#800049"
