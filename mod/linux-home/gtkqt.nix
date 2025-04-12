@@ -7,7 +7,7 @@
     iconTheme.name = "breeze-dark";
     cursorTheme.name = "breeze";
     gtk3.extraConfig = {
-      gtk-im-module = fcitx;
+      gtk-im-module = "fcitx";
     };
   };
   qt = {
