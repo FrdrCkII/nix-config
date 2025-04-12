@@ -1,3 +1,3 @@
 inherits = "snazzy"
 
-"ui.background" = { modifiers = ["hidden"] }
+"ui.background.bg" = { modifiers = ["hidden"] }
