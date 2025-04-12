@@ -588,6 +588,7 @@ binds {
 spawn-at-startup "xwayland-satellite" ":12"
 spawn-at-startup "gnome-keyring-daemon" "--start"
 spawn-at-startup "waybar"
+space-at-startup "fcitx5"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swww" "img" "/home/FrdrCkII/_ima/YaeWallpaper.gif"
 
