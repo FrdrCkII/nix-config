@@ -104,6 +104,7 @@ rec {
         just
         tree
         htop
+        rustup
       ];
     };
   };
