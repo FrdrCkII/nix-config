@@ -25,7 +25,6 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [
-        inputs.nixGL.overlays.default
         ( final: prev: {
           myrepo = inputs.myrepo.packages."${prev.system}";
         } )
@@ -35,15 +34,12 @@ rec {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixgl.overlay ];
     };
     nur = import inputs.nur {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
-      overlays = [ inputs.nixgl.overlay ];
     };
-    nixGL = import inputs.nixGL {};
   };
 
   modules = {
@@ -54,7 +50,7 @@ rec {
       "mod/linux-home/system.nix"
       "mod/linux-home/xdg.nix"
 
-      "mod/linux-home-programs/nixGL.nix"
+      "mod/linux-home-programs/nixgl.nix"
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/helix.nix"

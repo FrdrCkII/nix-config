@@ -6,6 +6,7 @@
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
     pkgs = custom-config.packages.pkgs;
+    nixgl = inputs.nixgl;
     cfg = {
       sys = custom-config.system;
       pkg = custom-config.packages;

@@ -2,7 +2,7 @@
 {
   programs.ghostty = {
     enable = true;
-    package = pkgs.ghostty;
+    package = config.lib.nixGL.wrap pkgs.ghostty;
     enableZshIntegration = true;
     clearDefaultKeybinds = false;
     settings = {
