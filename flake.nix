@@ -16,18 +16,18 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
 */
 {
   description = "A very basic flake";
-  # nixConfig = {
-  #   experimental-features = [
-  #     "flakes"
-  #     "nix-command"
-  #     "ca-derivations"
-  #   ];
-  #   substituters = [
-  #     "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-  #     "https://mirrors.ustc.edu.cn/nix-channels/store"
-  #     "https://cache.nixos.org"
-  #   ];
-  # };
+  nixConfig = {
+    experimental-features = [
+      "flakes"
+      "nix-command"
+      "ca-derivations"
+    ];
+    substituters = [
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+    ];
+  };
   inputs = {
     # 软件源
     # https://github.com/nixos/nixpkgs
