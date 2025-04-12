@@ -1,10 +1,22 @@
 { config, lib, pkgs, cfg, ... }:
 {
-  home.packages = with pkgs; [
-    helix
-  ];
-  xdg.configFile."helix" = {
-    source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/helix";
-    recursive = true;
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "snazzy";
+      editor = {
+        rulers = "[72,80]";
+        cursor-shape = {
+          normal = "block";
+          insert = "bar";
+          select = "underline";
+        };
+      };
+    };
+    languages.language = [{
+      name = "nix";
+      auto-format = true;
+      formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+    }];
   };
 }
