@@ -103,6 +103,7 @@ rec {
         ffmpeg #gimp
         just
         tree
+        htop
       ];
     };
   };
