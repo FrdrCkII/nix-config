@@ -26,7 +26,7 @@
       ## 文件保存设置 ##
 
       # 下载目录。可使用绝对路径或相对路径, 默认: 当前启动位置
-      dir = "''${HOME}/_dow";
+      dir = "\${HOME}/_dow";
 
       # 磁盘缓存, 0 为禁用缓存，默认:16M
       # 磁盘缓存的作用是把下载的数据块临时存储在内存中，然后集中写入硬盘，以减少磁盘 I/O ，提升读写性能，延长硬盘寿命。
@@ -62,11 +62,11 @@
       ## 进度保存设置 ##
 
       # 从会话文件中读取下载任务
-      input-file = "''${HOME}/.aria2/aria2.session";
+      input-file = "\${HOME}/.aria2/aria2.session";
 
       # 会话文件保存路径
       # Aria2 退出时或指定的时间间隔会保存`错误/未完成`的下载任务到会话文件
-      save-session = "''${HOME}/.aria2/aria2.session";
+      save-session = "\${HOME}/.aria2/aria2.session";
 
       # 任务状态改变后保存会话的间隔时间（秒）, 0 为仅在进程正常退出时保存, 默认:0
       # 为了及时保存任务状态、防止任务丢失，此项值只建议设置为 1
@@ -183,10 +183,10 @@
       #bt-external-ip = 
 
       # IPv4 DHT 文件路径，默认：$HOME/.aria2/dht.dat
-      dht-file-path = "''${HOME}/.aria2/dht/dht.dat";
+      dht-file-path = "\${HOME}/.aria2/dht/dht.dat";
 
       # IPv6 DHT 文件路径，默认：$HOME/.aria2/dht6.dat
-      dht-file-path6 = "''${HOME}/.aria2/dht/dht6.dat";
+      dht-file-path6 = "\${HOME}/.aria2/dht/dht6.dat";
 
       # IPv4 DHT 网络引导节点
       dht-entry-point = "dht.transmissionbt.com:6881";
@@ -307,11 +307,11 @@
 
       # 下载停止后执行的命令
       # 从 正在下载 到 删除、错误、完成 时触发。暂停被标记为未开始下载，故与此项无关。
-      on-download-stop = "''${HOME}/.aria2/scripts/delete.sh";
+      on-download-stop = "\${HOME}/.aria2/scripts/delete.sh";
 
       # 下载完成后执行的命令
       # 此项未定义则执行 下载停止后执行的命令 (on-download-stop)
-      on-download-complete = "''${HOME}/.aria2/scripts/clean.sh";
+      on-download-complete = "\${HOME}/.aria2/scripts/clean.sh";
 
       # 下载错误后执行的命令
       # 此项未定义则执行 下载停止后执行的命令 (on-download-stop)
