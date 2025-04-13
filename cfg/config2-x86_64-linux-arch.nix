@@ -51,6 +51,7 @@ rec {
       "mod/linux-home/xdg.nix"
 
       "mod/linux-home-programs/nixgl.nix"
+      "mod/linux-home-programs/gnome-keyring.nix"
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/helix.nix"
