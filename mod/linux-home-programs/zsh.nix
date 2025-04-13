@@ -59,7 +59,7 @@
           ZIM_HOME=~/.config/zsh
           # Install missing modules and update ''${ZIM_HOME}/init.zsh if missing or outdated.
           if [[ ! ''${ZIM_HOME}/init.zsh -nt ''${ZIM_CONFIG_FILE:-''${ZDOTDIR:-''${HOME}}/.zimrc} ]]; then
-            source /home/${cfg.opt.users.user.name}/.config/zsh/plugins/zsh-zim/zimfw.zsh init
+            source ${config.home.homeDirectory}/.config/zsh/plugins/zsh-zim/zimfw.zsh init
           fi
           # Initialize modules.
           source ''${ZIM_HOME}/init.zsh
@@ -80,7 +80,7 @@
         (''
           export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
           export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-          export PATH=$PATH:/home/${cfg.opt.users.user.name}/.cargo/bin
+          export PATH=$PATH:${config.home.homeDirectory}/.cargo/bin
         '')
       ];
     };
