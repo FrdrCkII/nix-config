@@ -80,6 +80,8 @@ rec {
     };
     drivers = {
       amd = true;
+      nvidia = false;
+      intel = false;
     };
     desktop = {
       
