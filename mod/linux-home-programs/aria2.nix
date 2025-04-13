@@ -283,7 +283,7 @@
       bt-require-crypto = true;
 
       # BT最低加密等级，可选：plain（明文），arc4（加密），默认：plain
-      bt-min-crypto-level = arc4;
+      bt-min-crypto-level = "arc4";
 
       # 分离仅做种任务，默认：false
       # 从正在下载的任务中排除已经下载完成且正在做种的任务，并开始等待列表中的下一个任务。
