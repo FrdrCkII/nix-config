@@ -2,7 +2,7 @@
 {
   xdg = {
     enable = true;
-    configHome = "~/.config";
+    configHome = "${config.home.homeDirectory}/.config";
     userDirs = {
       enable = true;
       desktop = "${config.home.homeDirectory}/_des";
