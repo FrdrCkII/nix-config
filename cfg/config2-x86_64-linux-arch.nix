@@ -25,20 +25,19 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [
-        inputs.myrepo.packages."${system.system}"
+        (final: prev: {
+          nur = import inputs.nur {
+            pkgs = prev;
+            nurpkgs = prev;
+            repoOverrides = { paul = import paul { pkgs = prev; }; };
+          };
+        })
+        ( final: prev: {
+          myrepo = inputs.myrepo.packages."${prev.system}";
+        } )
       ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
-      inherit (system) system;
-      config.allowUnfreePredicate = allowed-unfree-packages;
-      config.permittedInsecurePackages = allowed-insecure-packages;
-    };
-    nur = import inputs.nur {
-      inherit (system) system;
-      config.allowUnfreePredicate = allowed-unfree-packages;
-      config.permittedInsecurePackages = allowed-insecure-packages;
-    };
-    myrepo = import inputs.myrepo.packages {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
