@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ cfg, ... }:
 {
   xdg.configFile."fuzzel" = {
     source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/fuzzel";

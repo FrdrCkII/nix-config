@@ -1,8 +1,5 @@
 { custom-args, custom-config }: let
-  inherit (custom-args) inputs lib custom-lib;
-  inherit (custom-args.inputs) flake-utils system-manager;
-  system = custom-config.system.system;
-  pkgs = custom-config.packages.pkgs;
+  inherit (custom-args.inputs) system-manager;
   extraSpecialArgs = {
     inherit (custom-args) inputs custom-lib;
     pkgs = custom-config.packages.pkgs;

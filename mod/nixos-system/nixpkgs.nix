@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ lib, pkgs,... }:
 {
   # nixpkgs = {
   #   pkgs = cfg.pkg.pkgs

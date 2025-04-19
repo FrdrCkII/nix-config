@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ config, pkgs, cfg, ... }:
 {
   home.file.".aria2" = {
     source = cfg.lib.relativeToRoot "dot/${cfg.sys.config}/aria2";

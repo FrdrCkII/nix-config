@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ pkgs, ... }:
 {
   # 建议参考 https://wiki.archlinuxcn.org/wiki/简体中文本地化
   time.timeZone = "Asia/Shanghai";
@@ -64,7 +64,7 @@
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.iosevka
-      
+
       wqy_microhei
       wqy_zenhei
       arphic-ukai

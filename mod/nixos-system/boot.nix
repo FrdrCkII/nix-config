@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ lib, cfg, ... }:
 lib.mkMerge [
   {
     boot = {
@@ -47,5 +47,5 @@ lib.mkMerge [
   ( lib.mkIf (cfg.opt.boot.efi-mount-point != null) {
     loader.efi.efiSysMountPoint = cfg.opt.boot.efi-mount-point;
   } )
-  
+
 ]

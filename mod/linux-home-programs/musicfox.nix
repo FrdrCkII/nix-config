@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ pkgs, cfg, ... }:
 {
   home.packages = with pkgs; [
     go-musicfox

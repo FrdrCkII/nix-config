@@ -97,8 +97,8 @@ rec {
     };
 
     system-manager = {
-      # packages = with packages.pkgs; [
-      # ];
+      packages = with packages.pkgs; [
+      ];
     };
 
     home-manager = {

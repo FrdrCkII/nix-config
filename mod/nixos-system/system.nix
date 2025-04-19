@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ lib, pkgs, cfg, ... }:
 lib.mkMerge [
   {
     environment.systemPackages = with pkgs; [
@@ -30,5 +30,5 @@ lib.mkMerge [
   ( lib.mkIf (cfg.opt.users.user.passwd != null) {
     users.users.${cfg.opt.users.user.name}.hashedPassword = cfg.opt.users.user.passwd;
   } )
-  
+
 ]

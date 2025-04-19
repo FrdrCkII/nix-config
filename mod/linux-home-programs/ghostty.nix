@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, ... }:
+{ config, pkgs, ... }:
 {
   programs.ghostty = {
     enable = true;

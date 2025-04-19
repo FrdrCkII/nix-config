@@ -1,4 +1,4 @@
-{ config, lib, pkgs, cfg, nixgl, ... }:
+{ lib, pkgs, cfg, nixgl, ... }:
 lib.mkMerge [
   {
     nixGL.packages = import nixgl { inherit pkgs; };

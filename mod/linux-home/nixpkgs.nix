@@ -1,8 +1,5 @@
-{ config, lib, pkgs, cfg, ... }:
+{ pkgs, ... }:
 {
-  # nixpkgs = {
-  #   pkgs = cfg.pkg.pkgs;
-  # };
   nix = {
     package = pkgs.nix;
     settings = {
