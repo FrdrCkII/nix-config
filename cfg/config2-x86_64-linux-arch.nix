@@ -25,7 +25,7 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [
-        inputs.myrepo.packages."${system.system}";
+        inputs.myrepo.packages."${system.system}"
       ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
