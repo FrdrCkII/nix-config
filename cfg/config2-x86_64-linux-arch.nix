@@ -33,7 +33,7 @@ rec {
           };
         })
         ( final: prev: {
-          FrdrCkII = import inputs.FrdrCkII.packages."${prev.system}";
+          FrdrCkII = inputs.FrdrCkII.packages."${prev.system}";
         } )
       ];
     };
