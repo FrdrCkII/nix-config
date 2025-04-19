@@ -20,6 +20,6 @@
   };
   programs.aria2 = {
     enable = true;
-    package = pkgs.myrepo.aria2-fast;
+    package = cfg.pkg.myrepo.aria2-fast;
   };
 }

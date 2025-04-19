@@ -40,6 +40,7 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
     };
+    myrepo = import inputs.myrepo.packages."${system.system}";
   };
 
   modules = {
@@ -52,15 +53,18 @@ rec {
 
       "mod/linux-home-programs/nixgl.nix"
       "mod/linux-home-programs/gnome-keyring.nix"
+      "mod/linux-home-programs/rustup.nix"
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/helix.nix"
       "mod/linux-home-programs/aria2.nix"
+      "mod/linux-home-programs/fastfetch.nix"
       "mod/linux-home-programs/musicfox.nix"
       "mod/linux-home-programs/yazi.nix"
       "mod/linux-home-programs/zsh.nix"
 
       "mod/linux-home-desktop/niri.nix"
+      "mod/linux-home-desktop/hypr.nix"
     ];
     system-manager-modules = map custom-lib.relativeToRoot [
       "mod/linux-system/locale.nix"
@@ -84,7 +88,7 @@ rec {
       intel = false;
     };
     desktop = {
-      
+
     };
     boot = {
       grub.enable = true;
@@ -99,8 +103,6 @@ rec {
     home-manager = {
       version = "25.05";
       packages = with packages.pkgs; [
-        rustup
-        fastfetch
         nix-tree
         wechat-uos qq
         libreoffice

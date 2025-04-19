@@ -56,7 +56,7 @@ window#waybar.chromium {
 }
 
 #workspaces button.focused {
-    background-color: #64727D;
+    background-color: #64727d;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -65,7 +65,7 @@ window#waybar.chromium {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #64727d;
     /* border-bottom: 3px solid #ffffff; */
 }
 
@@ -83,7 +83,7 @@ window#waybar.chromium {
 #idle_inhibitor,
 #mpd {
     padding: 0 10px;
-    margin: 6px 3px; 
+    margin: 6px 3px;
     color: #000000;
 }
 
@@ -150,13 +150,12 @@ label:focus {
 
 #backlight {
     background-color: #000000;
-    color:white;
+    color: white;
 }
 
 #network {
     background-color: #000000;
-    color:white;
-
+    color: white;
 }
 
 #network.disconnected {
