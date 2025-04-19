@@ -6,7 +6,7 @@ lib.mkMerge [
       username = cfg.opt.users.user.name;
       homeDirectory = "/home/${cfg.opt.users.user.name}";
       stateVersion = cfg.opt.home-manager.version;
-      packages = with pkgs; []
+      packages = with pkgs; [ git vim curl wget ]
       ++ cfg.opt.home-manager.packages;
     };
   }
@@ -14,5 +14,5 @@ lib.mkMerge [
   ( lib.mkIf (cfg.sys.type == "linux") {
     targets.genericLinux.enable = true;
   } )
-  
+
 ]

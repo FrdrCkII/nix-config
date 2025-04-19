@@ -45,7 +45,7 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
     flake-utils.url = "github:numtide/flake-utils";
     # https://github.com/nix-community/home-manager
     home-manager = {
-      url = github:nix-community/home-manager/master;
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # https://github.com/numtide/system-manager

@@ -73,7 +73,7 @@ rec {
     ];
   };
 
-  options = rec {
+  options = {
     users = {
       user.name = "FrdrCkII";
       user.passwd = "$y$j9T$fenbjjJWwGfICJPdwhI561$3Aiwlijs42HSUNPptXm444QDxBrWI9rPwFrOmqcqo2.";
@@ -97,8 +97,8 @@ rec {
     };
 
     system-manager = {
-      packages = with packages.pkgs; [
-      ];
+      # packages = with packages.pkgs; [
+      # ];
     };
 
     home-manager = {
