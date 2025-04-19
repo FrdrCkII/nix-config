@@ -104,7 +104,7 @@ rec {
     home-manager = {
       version = "25.05";
       packages = with packages.pkgs; [
-        nixd
+        nixd nil
         nix-tree
         wechat-uos qq
         libreoffice
