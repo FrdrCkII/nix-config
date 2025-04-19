@@ -40,7 +40,11 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
     };
-    myrepo = import inputs.myrepo.packages."${system.system}";
+    myrepo = import inputs.myrepo.packages {
+      inherit (system) system;
+      config.allowUnfreePredicate = allowed-unfree-packages;
+      config.permittedInsecurePackages = allowed-insecure-packages;
+    };
   };
 
   modules = {
