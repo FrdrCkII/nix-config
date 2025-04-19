@@ -23,6 +23,18 @@ rec {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
+      overlays = [
+        (final: prev: {
+          nur = import inputs.nur {
+            pkgs = prev;
+            nurpkgs = prev;
+            repoOverrides = { paul = import paul { pkgs = prev; }; };
+          };
+        })
+        ( final: prev: {
+          myrepo = inputs.myrepo.packages."${prev.system}";
+        } )
+      ];
     };
     pkgs-stable = import inputs.nixpkgs-stable {
       inherit (system) system;
@@ -30,11 +42,6 @@ rec {
       config.permittedInsecurePackages = allowed-insecure-packages;
     };
     pkgs-unstable = import inputs.nixpkgs-unstable {
-      inherit (system) system;
-      config.allowUnfreePredicate = allowed-unfree-packages;
-      config.permittedInsecurePackages = allowed-insecure-packages;
-    };
-    nur = import inputs.nur {
       inherit (system) system;
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
@@ -69,7 +76,7 @@ rec {
       intel = false;
     };
     desktop = {
-      
+
     };
     boot = {
       grub.enable = true;
