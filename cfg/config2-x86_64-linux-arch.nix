@@ -107,9 +107,8 @@ rec {
       version = "25.05";
       packages = with packages.pkgs; [
         nix-tree
-        wechat-uos qq
         libreoffice
-        ffmpeg #gimp
+        ffmpeg
         just
         tree
         htop
