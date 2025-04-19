@@ -58,6 +58,7 @@ rec {
 
       "mod/linux-home-programs/ghostty.nix"
       "mod/linux-home-programs/helix.nix"
+      "mod/linux-home-programs/zed.nix"
       "mod/linux-home-programs/aria2.nix"
       "mod/linux-home-programs/fastfetch.nix"
       "mod/linux-home-programs/musicfox.nix"
@@ -104,7 +105,6 @@ rec {
     home-manager = {
       version = "25.05";
       packages = with packages.pkgs; [
-        nixd nil
         nix-tree
         wechat-uos qq
         libreoffice
