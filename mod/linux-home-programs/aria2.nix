@@ -12,7 +12,7 @@
       Description = "Aria2 Daemon";
     };
     Service = {
-      ExecStart = "${pkgs.nur.repo.FrdrCkII.aria2-fast}/bin/aria2c --conf-path=${config.home.homeDirectory}/.aria2/aria2.conf";
+      ExecStart = "${pkgs.nur.FrdrCkII.aria2-fast}/bin/aria2c --conf-path=${config.home.homeDirectory}/.aria2/aria2.conf";
     };
     Install = {
       WantedBy = [ "default.target" ];
@@ -20,6 +20,6 @@
   };
   programs.aria2 = {
     enable = true;
-    package = pkgs.nur.repo.FrdrCkII.aria2-fast;
+    package = pkgs.nur.FrdrCkII.aria2-fast;
   };
 }
