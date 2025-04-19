@@ -24,15 +24,14 @@ rec {
       config.allowUnfreePredicate = allowed-unfree-packages;
       config.permittedInsecurePackages = allowed-insecure-packages;
       overlays = [
-        (final: prev: {
+        ( final: prev: {
           nur = import inputs.nur {
             pkgs = prev;
             nurpkgs = prev;
-            repoOverrides = { paul = import paul { pkgs = prev; }; };
+            repoOverrides = {
+              FrdrCkII = import inputs.FrdrCkII { pkgs = prev; };
+            };
           };
-        })
-        ( final: prev: {
-          myrepo = inputs.myrepo.packages."${prev.system}";
         } )
       ];
     };
