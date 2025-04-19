@@ -61,6 +61,7 @@ rec {
       "mod/linux-home-programs/zed.nix"
       "mod/linux-home-programs/aria2.nix"
       "mod/linux-home-programs/fastfetch.nix"
+      "mod/linux-home-programs/flatpak.nix"
       "mod/linux-home-programs/musicfox.nix"
       "mod/linux-home-programs/yazi.nix"
       "mod/linux-home-programs/zsh.nix"
