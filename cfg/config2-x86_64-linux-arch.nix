@@ -29,11 +29,10 @@ rec {
           nur = import inputs.nur {
             pkgs = prev;
             nurpkgs = prev;
-            repoOverrides = { paul = import paul { pkgs = prev; }; };
+            repoOverrides = {
+              FrdrCkII = import inputs.FrdrCkII { pkgs = prev; };
+            };
           };
-        } )
-        ( final: prev: {
-          myrepo = inputs.myrepo.packages."${prev.system}";
         } )
       ];
     };

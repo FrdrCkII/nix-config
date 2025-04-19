@@ -75,7 +75,7 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # github仓库
-    myrepo = {
+    FrdrCkII = {
       url = "github:FrdrCkII/nur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -91,11 +91,11 @@ Gentoo wiki https://wiki.gentoo.org/wiki/Main_Page
     };
     configWithoutPaths = builtins.attrValues config;
   in {
-    nixosConfigurations = 
+    nixosConfigurations =
       lib.attrsets.mergeAttrsList (map (it: it.nixosConfigurations or {}) configWithoutPaths);
-    homeConfigurations = 
+    homeConfigurations =
       lib.attrsets.mergeAttrsList (map (it: it.homeConfigurations or {}) configWithoutPaths);
-    systemConfigs = 
+    systemConfigs =
       lib.attrsets.mergeAttrsList (map (it: it.systemConfigs or {}) configWithoutPaths);
   };
 }
