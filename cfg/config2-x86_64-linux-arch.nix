@@ -65,7 +65,7 @@ rec {
       "mod/linux-home-programs/zsh.nix"
 
       "mod/linux-home-desktop/niri.nix"
-      "mod/linux-home-desktop/hypr.nix"
+      # "mod/linux-home-desktop/hypr.nix"
     ];
     system-manager-modules = map custom-lib.relativeToRoot [
       "mod/linux-system/locale.nix"
